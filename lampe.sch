@@ -4083,7 +4083,10 @@ type 0204, grid 2.5 mm</description>
 <package name="SWITCH">
 <pad name="1" x="-3.81" y="0" drill="1.1" shape="octagon"/>
 <pad name="2" x="3.81" y="0" drill="1.1" shape="octagon"/>
-<rectangle x1="-3" y1="-1.75" x2="3" y2="1.75" layer="21"/>
+<wire x1="-3" y1="1.75" x2="3" y2="1.75" width="0.127" layer="21"/>
+<wire x1="3" y1="1.75" x2="3" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="3" y1="-1.75" x2="-3" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="-3" y1="-1.75" x2="-3" y2="1.75" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
