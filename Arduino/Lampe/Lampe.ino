@@ -53,7 +53,7 @@ void loop() {
     delay(10);
   } else {
     if(ui_isPressed(1)) {
-      while (ui_isPressed(1)) {}
+      while (ui_isPressed(1)) {delay(10);}
       if (r==0) {
         r = 255;
         ui_setLed(1, 1);
@@ -63,8 +63,7 @@ void loop() {
       }
     }
     if(ui_isPressed(2)) {
-      while (ui_isPressed(2)) {}
-      g = 255;
+      while (ui_isPressed(2)) {delay(10);}
       if (g==0) {
         g = 255;
         ui_setLed(2, 1);
@@ -75,7 +74,7 @@ void loop() {
 
     }
     if(ui_isPressed(3)) {
-      while (ui_isPressed(3)) {}
+      while (ui_isPressed(3)) {delay(10);}
       if (b==0) {
         b = 255;
         ui_setLed(3, 1);
@@ -86,7 +85,7 @@ void loop() {
 
     }
     if(ui_isPressed(4)) {
-      while (ui_isPressed(4)) {}
+      while (ui_isPressed(4)) {delay(10);}
       r = g = b = 0;
       ui_setLed(1, 0);
       ui_setLed(2, 0);

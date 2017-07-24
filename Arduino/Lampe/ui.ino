@@ -1,6 +1,6 @@
 #define LED1  A3
-#define LED2  A2
-#define LED3  A5
+#define LED2  A5
+#define LED3  A2
 #define LED4  A4
 
 #define BUTTON1 2
