@@ -37,7 +37,7 @@ void loop() {
   //int outputValue = lichtLevel / 4;
   //lichtaus_setLeds(outputValue, outputValue, outputValue);
 
-  if((!(ui_isPressed(1) || ui_isPressed(2) || ui_isPressed(3) || ui_isPressed(4))) && lichtLevel > 1000){
+  if((!(ui_isPressed(1) || ui_isPressed(2) || ui_isPressed(3) || ui_isPressed(4))) && lichtLevel > 300 ){
     regenbogen();
     ui_setLed(1, 0);
     ui_setLed(2, 0);

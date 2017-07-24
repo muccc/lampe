@@ -20,14 +20,14 @@ void lichtaus_init(void)
 void lichtaus_setLed(int led, int r, int g, int b)
 {
   if(led == 1) {
-    analogWrite(RED1, r);
-    analogWrite(GREEN1, g);
-    analogWrite(BLUE1, b);
+    analogWrite(RED1, 255-r);
+    analogWrite(GREEN1, 255-g);
+    analogWrite(BLUE1, 255-b);
   }
   if(led == 2) {
-    analogWrite(RED2, r);
-    analogWrite(GREEN2, g);
-    analogWrite(BLUE2, b);
+    analogWrite(RED2, 255-r);
+    analogWrite(GREEN2, 255-g);
+    analogWrite(BLUE2, 255-b);
   }
 }
 
