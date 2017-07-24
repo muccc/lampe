@@ -10,6 +10,13 @@ int regenbogen_r = 255;
 int regenbogen_g = 0;
 int regenbogen_b = 0;
 
+int r = 0;
+int g = 0;
+int b = 0;
+
+
+
+
 void regenbogen(void)
 {
   if(regenbogen_b == 0 && regenbogen_r > 0) {
@@ -37,7 +44,7 @@ void loop() {
   //int outputValue = lichtLevel / 4;
   //lichtaus_setLeds(outputValue, outputValue, outputValue);
 
-  if((!(ui_isPressed(1) || ui_isPressed(2) || ui_isPressed(3) || ui_isPressed(4))) && lichtLevel > 300 ){
+  if(!ui_isPressed(1) && !ui_isPressed(2) && !ui_isPressed(3) && !ui_isPressed(14) && r == 0 && g == 0 && b == 0 && lichtLevel > 300 ){
     regenbogen();
     ui_setLed(1, 0);
     ui_setLed(2, 0);
@@ -45,27 +52,45 @@ void loop() {
     ui_setLed(4, 0);
     delay(10);
   } else {
-    int r = 0;
-    int g = 0;
-    int b = 0;
     if(ui_isPressed(1)) {
-      r = 255;
-      ui_setLed(1, 0);
+      while (ui_isPressed(1)) {}
+      if (r==0) {
+        r = 255;
+        ui_setLed(1, 1);
+      } else {
+        r = 0;
+        ui_setLed(1, 0);
+      }
     }
     if(ui_isPressed(2)) {
+      while (ui_isPressed(2)) {}
       g = 255;
-      ui_setLed(2, 0);
+      if (g==0) {
+        g = 255;
+        ui_setLed(2, 1);
+      } else {
+        g = 0;
+        ui_setLed(2, 0);
+      }
 
     }
     if(ui_isPressed(3)) {
-      b = 255;
-      ui_setLed(3, 0);
+      while (ui_isPressed(3)) {}
+      if (b==0) {
+        b = 255;
+        ui_setLed(3, 1);
+      } else {
+        b = 0;
+        ui_setLed(3, 0);
+      }
 
     }
     if(ui_isPressed(4)) {
-      r = g = b = 255;
-      ui_setLed(4, 0);
-
+      while (ui_isPressed(4)) {}
+      r = g = b = 0;
+      ui_setLed(1, 0);
+      ui_setLed(2, 0);
+      ui_setLed(3, 0);
     }
     lichtaus_setLeds(r, g, b);
   }
